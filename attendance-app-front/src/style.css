@@ -1,0 +1,32 @@
+/*
+.image {
+  background-image: url('/public/assets/pexels-tim-gouw-53874.jpg');
+  background-position: center;
+  background-size: cover;
+}*/
+
+body{
+  background-image: url('/public/assets/pexels-pixabay-268533\ \(1\).jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.formulaire{
+  border-radius: 10px;
+  background-color: white;
+}
+
+img{
+  border-radius: 10px 0px 0px 10px ;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+li{
+  list-style: none;
+}
+
