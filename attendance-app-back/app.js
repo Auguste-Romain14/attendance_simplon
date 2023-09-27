@@ -5,6 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const dotenv = require("dotenv").config();
+const MONGODB_URI = process.env.MONGODB_URI;
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -25,11 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 connectDataBase().catch((err) => console.log(err));
 
 async function connectDataBase() {
-  await mongoose
-    .connect(
-      "mongodb+srv://telauguste:8uubsbuJXfFuAnwo@cluster0.crsufg5.mongodb.net/"
-    )
-    .then(() => console.log("Connected!"));
+  await mongoose.connect(MONGODB_URI).then(() => console.log("Connected!"));
 }
 app.use(cors());
 app.use("/", indexRouter);
